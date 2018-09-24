@@ -21,6 +21,7 @@ import brave.Tracer;
 public class TestAutoConfiguration {
 
     @ConditionalOnBean(type = "brave.Tracer")
+    @Configuration
     public static class TracedConfiguration {
 
         @Bean
@@ -31,6 +32,7 @@ public class TestAutoConfiguration {
     }
 
     @ConditionalOnMissingBean(type = "brave.Tracer")
+    @Configuration
     public static class NoTracedConfiguration {
 
         @Bean
